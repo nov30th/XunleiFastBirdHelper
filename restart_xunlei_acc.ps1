@@ -1,4 +1,4 @@
-echo testing network speed
+ echo testing network speed
 
 Get-Date >> C:\temp\speed.txt
 C:/speedtest.exe -s 7509 -p no -f json > C:\temp\speed.json
@@ -15,12 +15,13 @@ if ($json.download.bandwidth -ge 25000000){
     echo "smaller" >> C:\temp\speed.txt
     echo Stopping XlNetAcc.exe
     taskkill /f /im XlNetAcc.exe
-    net stop XlNetAccSrv
+    # net stop XlNetAccSrv
     echo cding...
     C:
     cd "C:\Program Files (x86)\Thunder Network\XlNetAcc\Program"
     echo Starting XlNetAcc.exe
-    net start XlNetAccSrv
+    # net start XlNetAccSrv
     start XlNetAcc.exe
     echo "restarted" >> C:\temp\speed.txt
 }
+ 
